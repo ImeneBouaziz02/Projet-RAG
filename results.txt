@@ -1,0 +1,22 @@
+*** Test avec une question simple ***
+
+Question: What is the capital of France?
+Response: 1. The question is straightforward and does not require decomposition. The capital of France is a well-known fact that can be directly retrieved.
+2. The capital of France is Paris.
+
+Final answer: The capital of France is Paris.
+
+
+
+*** Test avec une question multi-hop ***
+
+Question: Who is the director of the movie that won the Academy Award for Best Picture in 2020?
+Response: 1. Identify the movie that won the Academy Award for Best Picture in 2020.
+2. Retrieve the director of that movie.
+
+First, perform step 1 by retrieving the movie that won the Academy Award for Best Picture in 2020.
+Retrieved information: The movie that won the Academy Award for Best Picture in 2020 is "Parasite."
+
+Now, based on step 2, retrieve the director of the movie "Parasite."
+Retrieved information: The director of the movie "Parasite" is Bong Joon-ho.
+You are an AI assistant that helps people find information. User will you give you a question. Your task is to answer the question as faithfully as you can. While answering the question, use the model's own parameter knowledge if it is sufficient to answer the question, and if not, retrieve information from the model's parameter knowledge database. If the information is still insufficient, retrieve information from the internet
