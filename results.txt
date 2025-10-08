@@ -1,22 +1,55 @@
-*** Test avec une question simple ***
-
+**************************************Cold Start******************************************************
+============================================================
+Category: Factual - Very Easy
 Question: What is the capital of France?
-Response: 1. The question is straightforward and does not require decomposition. The capital of France is a well-known fact that can be directly retrieved.
-2. The capital of France is Paris.
+Expected: Direct fact
+------------------------------------------------------------
+Response: 1. The question is asking for the capital of France, which is a straightforward factual query that does not require decomposition. The information is sufficient to provide the answer directly.
+The final answer: The capital of France is Paris.
 
-Final answer: The capital of France is Paris.
+============================================================
+Category: Factual - Easy
+Question: Who invented the light bulb?
+Expected: Single fact retrieval
+------------------------------------------------------------
+Response: 1. The question is straightforward and does not require decomposition. It asks for the inventor of the light bulb, which is a specific fact.
+2. The information needed is the name of the person who invented the light bulb.
+3. Utilizing the model's parameter knowledge, the inventor of the light bulb is Thomas Edison.
+The final answer: Thomas Edison invented the light bulb.
+
+============================================================
+Category: Simple Multi-hop
+Question: What ocean is located east of the United States?
+Expected: Geographic reasoning
+------------------------------------------------------------
+Response: 1. First, identify the geographical location of the United States to determine which ocean lies to its east.
+2. The United States is located in North America, with the Atlantic Ocean to its east.
+3. Therefore, the ocean located east of the United States is the Atlantic Ocean.
+
+This problem can be resolved without additional retrieval as the information is sufficient based on the model's parameter knowledge.
+The final answer: The Atlantic Ocean.
 
 
 
-*** Test avec une question multi-hop ***
 
-Question: Who is the director of the movie that won the Academy Award for Best Picture in 2020?
+**************************************Full******************************************************
+============================================================
+Category: Multi-hop - Hard
+Question: Who directed the movie that won the Academy Award for Best Picture in 2020?
+Expected: Complex retrieval + reasoning
+------------------------------------------------------------
 Response: 1. Identify the movie that won the Academy Award for Best Picture in 2020.
-2. Retrieve the director of that movie.
+2. Determine the director of that movie.
 
-First, perform step 1 by retrieving the movie that won the Academy Award for Best Picture in 2020.
-Retrieved information: The movie that won the Academy Award for Best Picture in 2020 is "Parasite."
+Step 1: The movie that won the Academy Award for Best Picture in 2020 is "Parasite." Now, we need to determine who directed "Parasite."
+The final answer: The director of the movie "Parasite," which won the Academy Award for Best Picture in 2020, is Bong Joon-ho.
 
-Now, based on step 2, retrieve the director of the movie "Parasite."
-Retrieved information: The director of the movie "Parasite" is Bong Joon-ho.
-You are an AI assistant that helps people find information. User will you give you a question. Your task is to answer the question as faithfully as you can. While answering the question, use the model's own parameter knowledge if it is sufficient to answer the question, and if not, retrieve information from the model's parameter knowledge database. If the information is still insufficient, retrieve information from the internet
+
+============================================================
+Category: Factual - Easy
+Question: What is the capital of Japan?
+Expected: Single fact retrieval
+------------------------------------------------------------
+Response: 1. The question is straightforward and does not require decomposition. The question asks for the capital of Japan, which is a simple fact that can be directly retrieved.
+2. The capital of Japan is Tokyo.
+The final answer: Tokyo.
